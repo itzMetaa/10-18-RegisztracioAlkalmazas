@@ -40,8 +40,10 @@
             this.btnMentes = new System.Windows.Forms.Button();
             this.btnBetoltes = new System.Windows.Forms.Button();
             this.listBoxHobbik = new System.Windows.Forms.ListBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioFerfi = new System.Windows.Forms.RadioButton();
+            this.radioNo = new System.Windows.Forms.RadioButton();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // label1
@@ -100,6 +102,7 @@
             this.textBoxUjHobbi.Name = "textBoxUjHobbi";
             this.textBoxUjHobbi.Size = new System.Drawing.Size(120, 20);
             this.textBoxUjHobbi.TabIndex = 8;
+            this.textBoxUjHobbi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxUjHobbi_KeyDown);
             // 
             // label7
             // 
@@ -118,6 +121,7 @@
             this.btnHozzaad.TabIndex = 10;
             this.btnHozzaad.Text = "Hozzáad";
             this.btnHozzaad.UseVisualStyleBackColor = true;
+            this.btnHozzaad.Click += new System.EventHandler(this.btnHozzaad_Click);
             // 
             // btnMentes
             // 
@@ -127,6 +131,7 @@
             this.btnMentes.TabIndex = 11;
             this.btnMentes.Text = "Mentés";
             this.btnMentes.UseVisualStyleBackColor = true;
+            this.btnMentes.Click += new System.EventHandler(this.btnMentes_Click);
             // 
             // btnBetoltes
             // 
@@ -136,6 +141,7 @@
             this.btnBetoltes.TabIndex = 12;
             this.btnBetoltes.Text = "Betöltés";
             this.btnBetoltes.UseVisualStyleBackColor = true;
+            this.btnBetoltes.Click += new System.EventHandler(this.btnBetoltes_Click);
             // 
             // listBoxHobbik
             // 
@@ -145,35 +151,45 @@
             this.listBoxHobbik.Size = new System.Drawing.Size(120, 95);
             this.listBoxHobbik.TabIndex = 13;
             // 
-            // radioButton1
+            // radioFerfi
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(78, 92);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(45, 17);
-            this.radioButton1.TabIndex = 14;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Férfi";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioFerfi.AutoSize = true;
+            this.radioFerfi.Location = new System.Drawing.Point(78, 92);
+            this.radioFerfi.Name = "radioFerfi";
+            this.radioFerfi.Size = new System.Drawing.Size(45, 17);
+            this.radioFerfi.TabIndex = 14;
+            this.radioFerfi.TabStop = true;
+            this.radioFerfi.Text = "Férfi";
+            this.radioFerfi.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioNo
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(78, 115);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 17);
-            this.radioButton2.TabIndex = 15;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Nő";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioNo.AutoSize = true;
+            this.radioNo.Location = new System.Drawing.Point(78, 115);
+            this.radioNo.Name = "radioNo";
+            this.radioNo.Size = new System.Drawing.Size(39, 17);
+            this.radioNo.TabIndex = 15;
+            this.radioNo.TabStop = true;
+            this.radioNo.Text = "Nő";
+            this.radioNo.UseVisualStyleBackColor = true;
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "txt";
+            this.saveFileDialog1.Filter = "Szöveges fájl|*.txt";
+            this.saveFileDialog1.Tag = "";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Regisztráció
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(323, 241);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.radioNo);
+            this.Controls.Add(this.radioFerfi);
             this.Controls.Add(this.listBoxHobbik);
             this.Controls.Add(this.btnBetoltes);
             this.Controls.Add(this.btnMentes);
@@ -209,8 +225,10 @@
         private System.Windows.Forms.Button btnMentes;
         private System.Windows.Forms.Button btnBetoltes;
         private System.Windows.Forms.ListBox listBoxHobbik;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioFerfi;
+        private System.Windows.Forms.RadioButton radioNo;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
