@@ -104,18 +104,26 @@ namespace RegisztracioAlkalmazas
 
         private void textBoxUjHobbi_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (!(textBoxUjHobbi.Text == ""))
             {
-                listBoxHobbik.Items.Add(textBoxUjHobbi.Text);
-                listBoxHobbik.Text = "";
+                if (e.KeyCode == Keys.Enter)
+                {
+                    listBoxHobbik.Items.Add(textBoxUjHobbi.Text);
+                    listBoxHobbik.Text = "";
+                    textBoxUjHobbi.Clear();
 
+                }
             }
         }
 
         private void btnHozzaad_Click(object sender, EventArgs e)
         {
-            listBoxHobbik.Items.Add(textBoxUjHobbi.Text);
-            listBoxHobbik.Text = "";
+            if (!(textBoxUjHobbi.Text == ""))
+            {
+                listBoxHobbik.Items.Add(textBoxUjHobbi.Text);
+                listBoxHobbik.Text = "";
+                textBoxUjHobbi.Clear();
+            }
         }
     }
 }
